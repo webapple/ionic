@@ -1,0 +1,98 @@
+<!--
+  Generated template for the VideiPlayPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title></ion-title>
+    <button ion-button clear style=" color: #2ad1ff;" no-padding float-right>
+      <img src="assets/img/shareDefa.png" style="width: 22px">
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content class="bac">
+  <div style="position: relative;">
+    <div style="position: absolute;width: 100%;height: 100%;background: rgba(0,0,0,.3)" *ngIf="videoShow" (tap) = "videoShowfun()">
+      <p class="password">{{password}}</p>
+    </div>
+    <iframe frameborder="0" width="100%" height="180px" [src] = "card.videoUrl2"  allowfullscreen></iframe>
+  </div>
+  <div>
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="'http://loupai.6655.la:20503/api/static/image/' + card.user.headImgUrl">
+      </ion-avatar>
+      <h2 float-left>{{card.user.username}}</h2>
+
+      <ion-note align-self-center float-right >
+        {{card.user.createdAt}}
+      </ion-note>
+
+    </ion-item>
+    <ion-row style="background: #fff">
+      <p class="content-text" style="padding-left: 8px;margin: 0px">简介： {{card.intro}}</p>
+    </ion-row>
+
+  </div>
+  <ion-card class="card2">
+    <p class="magin-left border-bottom" style="padding: 10px 0">网友评论</p>
+    <p style="text-align: center" *ngIf="show">暂时还没有评论</p>
+    <div *ngIf="!show">
+      <div *ngFor="let comment of commentList; let i = index">
+
+        <ion-item>
+          <ion-avatar item-start>
+            <img [src] = "imgurl + comment.user.headImgUrl">
+          </ion-avatar>
+          <h2 float-left>{{comment.user.username}}<br><p style="margin: 5px 0">{{comment.createdAt}}</p></h2>
+          <ion-note align-self-center float-right style="width: 60px;padding: 10px" (tap) ="like(i)">
+            <img [src]="comment.likeimgUrl" class="icon" float-left />
+            <div class="icontxet" float-right>{{comment.likeNum}}</div>
+          </ion-note>
+
+        </ion-item>
+        <ion-row class="magin-left border-bottom magin-bottom" >
+          <ion-col col-1>
+
+          </ion-col>
+          <ion-col col-11>
+            <p class="magin-left">{{comment.comment}}</p>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+
+  </ion-card>
+  <div class="comment-mian">
+    <ion-row>
+      <ion-col col-6 (tap) = "presentModal()">
+        <p class="comment">发表你的评论吧</p>
+      </ion-col>
+      <ion-col col-2>
+        <button ion-button icon-left clear small>
+          <img [src]="card.likeimgUrl" class="icon">
+          <div class="icontxet">{{card.likeNum}}</div>
+        </button>
+      </ion-col>
+      <ion-col col-2>
+        <button ion-button icon-left clear small>
+          <img [src]="card.collectimgUrl" class="icon">
+          <div class="icontxet">{{card.collectNum}}</div>
+        </button>
+      </ion-col>
+      <ion-col col-2>
+        <button ion-button icon-left clear small>
+          <img src="assets/img/comment.png" class="icon">
+          <div class="icontxet">{{card.commentNum}}</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

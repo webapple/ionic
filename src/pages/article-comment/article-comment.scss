@@ -1,0 +1,16 @@
+page-article-comment {
+  .background{
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    width: 100%;
+
+    .pading{
+      padding: 0 8px;
+    }
+    .position{
+      width: 100%;
+      position: fixed;
+      bottom: 0px;
+    }
+  }
+}

@@ -1,0 +1,91 @@
+<!--
+  Generated template for the GroupPurchasePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar no-padding  style="min-height: 100%">
+    <ion-grid  class="header">
+      <ion-row>
+        <ion-col>
+          <ion-avatar class = "avatar">
+            <img [src] = "imageUrl">
+          </ion-avatar>
+        </ion-col>
+        <ion-col>
+          <p style="text-align: center" class="title">团购</p>
+        </ion-col>
+        <ion-col>
+          <ion-icon (tap)="itemTapped($event)" name="search" float-right  style="font-size: 24px;margin-top:8px;color: #fff;"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="bac">
+  <ion-card no-padding margin-vertical  *ngFor = "let card of dataList; let i = index;">
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="imgurl + card.user.headImgUrl">
+      </ion-avatar>
+      <span class="name">{{card.user.username}}</span>
+      <ion-note align-self-center float-right >
+        {{card.createdAt}}
+      </ion-note>
+    </ion-item>
+    <ion-grid>
+      <ion-row (tap)="goTopage($event,card,i)">
+        <ion-col col-5>
+          <div class="modal" style="position: absolute;width: 100%;height: 100%"></div>
+          <iframe frameborder="0" width="100%" height="100px" [src] = "card.videoUrl2"  allowfullscreen></iframe>
+        </ion-col>
+        <ion-col col-7>
+          <ion-card-content  no-padding>
+            <p class="title">{{card.videoTitle}}</p>
+            <p class="content-text">{{card.intro}}</p>
+            <p class="price0">￥{{card.price}}</p>
+            <p class="content-text">团购人数 <span class="price1">{{card.yetBuyNum}}/{{card.reqBuyNum}}</span></p>
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-row>
+      <ion-col  no-padding (tap)="change(i,'likeimgUrl','1')">
+        <button ion-button icon-left clear small>
+          <img [src]="card.likeimgUrl" class="icon">
+          <div class="icontxet">{{card.likeNum}}</div>
+        </button>
+      </ion-col>
+      <ion-col  no-padding (tap)="change(i,'collectimgUrl','2')">
+        <button ion-button icon-left clear small>
+          <img [src]="card.collectimgUrl" class="icon">
+          <div class="icontxet">{{card.collectNum}}</div>
+        </button>
+      </ion-col>
+      <ion-col  no-padding (tap)="goTopage($event,card,i,true)">
+        <button ion-button icon-left clear small>
+          <img src="assets/img/comment.png" class="icon">
+          <div class="icontxet">{{card.commentNum}}</div>
+        </button>
+      </ion-col>
+      <ion-col  no-padding (tap)="change(i,'shareimgUrl')">
+        <button ion-button icon-left clear small>
+          <img [src]="card.shareimgUrl" class="icon">
+          <div class="icontxet">{{card.relayNum}}</div>
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="正在加载...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

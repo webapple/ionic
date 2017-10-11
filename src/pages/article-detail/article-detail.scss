@@ -1,0 +1,224 @@
+page-article-detail {
+  .mcHeader {
+    .back-button-icon {
+      font-size: 28px;
+      color: #444;
+    }
+    .back-button-text {
+      color: #444;
+    }
+    .toolbar-background  {
+      background-color: #fff;
+    }
+    .toolbar-title {
+      font-size: 18px;
+      color: #444;
+    }
+
+  }
+
+  .mcDetail {
+    margin: 0;
+    padding: 20px 14px;
+    ion-grid {
+      padding: 0;
+    }
+    ion-col {
+      padding: 0;
+    }
+
+    .mcDetail-item {
+      margin-bottom: 18px;
+    }
+    .mcDetail-img {
+      padding-right: 10px;
+    }
+    .mcDetail-body {
+      padding-top: 8px;
+    }
+    .mcDetail-title {
+      font-size: 16px;
+      color: #444;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .mcDetail-author, .mcDetail-time {
+      font-size: 12px;
+      color: #777;
+      margin-bottom: 8px;
+    }
+    .mcDetail-pay {
+      font-size: 15px;
+      color: #fd4a13;
+      font-weight: bold;
+    }
+    .mcDetail-free {
+      font-size: 15px;
+      color: #2ab1ff;
+      font-weight: bold;
+    }
+    .mcDetail-btns {
+      display: flex;
+      margin-bottom: 18px;
+      button {
+        width: 109px;
+        height: 36px;
+        font-size: 14px;
+        border-radius: 4px;
+      }
+    }
+    .mcDetail-read {
+      margin-right: 10px;
+      button {
+        color: #fff;
+        background-color: #2ab1ff;
+      }
+    }
+    .mcDetail-collect {
+      button {
+        border: 1px solid #ccc;
+        color: #777;
+        background-color: #fff;
+
+      }
+    }
+    .mcDetail-brief {
+      font-size: 12px;
+      color: #777;
+      line-height: 18px;
+      max-height: 54px;
+      overflow : hidden;
+    }
+    .mcDetail-more {
+      float: right;
+      color: #2ab1ff;
+    }
+  }
+
+  .mcContainer {
+    margin-top: 10px;
+    padding: 0 14px;
+    h2 {
+      font-size: 15px;
+      color: #444;
+    }
+  }
+
+  .mcComment {
+    display: flex;
+    align-items: flex-start;
+    padding: 18px 0 16px;
+
+    border-bottom: 1px solid #dbdbdb;
+    .mcComment-img {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: red;
+      margin-right: 15px;
+      margin-top: 1px;
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .mcComment-body {
+      flex: 1;
+    }
+    .mcComment-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .mcComment-title {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 6px;
+      line-height: 1;
+    }
+    .mcComment-time {
+      font-size: 10px;
+      color: #999;
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+    .mcComment-content {
+      font-size: 14px;
+      color: #444;
+      line-height: 18px;
+      p {
+        word-break:break-all;
+      }
+    }
+
+    .mcComment-star {
+      display: inline-block;
+      font-size: 13px;
+      color: #999;
+      i {
+        display: inline-block;
+        margin-top: -3px;
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+        vertical-align: middle;
+      }
+      img {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 7px;
+        vertical-align: middle;
+      }
+      span {
+        display: inline-block;
+
+        font-size: 13px;
+        color: #999;
+      }
+    }
+
+    .icon-zang-mr {
+      background: url(../../assets/img/icon-zang-mr.png) no-repeat;
+      background-size: 16px;
+    }
+    .icon-zang-jh {
+      background: url(../../assets/img/icon-zang-jh.png) no-repeat;
+      background-size: 16px;
+    }
+    h3, p {
+      margin: 0;
+    }
+  }
+
+  .mcFotter {
+    height: 44px;
+    padding-left: 14px;
+    border-top: 1px solid #dbdbdb;
+    .grid {
+      height: 100%;
+      padding: 0;
+      justify-content: center;
+    }
+    .col {
+      padding: 0;
+    }
+    .mcFotter-comment {
+      padding-right: 18px;
+    }
+    .mcFotter-input {
+      height: 30px;
+      padding-left: 8px;
+      margin: 0;
+      border: none;
+      font-size: 14px;
+      line-height: 30px;
+      color: #999;
+      border-radius: 4px;
+      background-color: #f5f5f5;
+    }
+    .mcFotter-stars {
+      padding-top: 5px;
+    }
+  }
+}

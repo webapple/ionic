@@ -1,0 +1,114 @@
+<!--
+  Generated template for the ArticleDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar class="mcHeader">
+    <ion-title >文章详情</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card class="mcDetail">
+
+    <ion-grid class="mcDetail-item">
+      <ion-row>
+        <ion-col col-5 class="mcDetail-img">
+          <img [src] = "imgurl + item.imgUrl">
+        </ion-col>
+        <ion-col col-7 class="mcDetail-body">
+          <!-- <ion-card-content  no-padding> -->
+            <h3 class="mcDetail-title">{{ item.title }}</h3>
+            <p class="mcDetail-author">作者 {{ item.user.username}}</p>
+            <p class="mcDetail-time">{{ item.user.createdAt }}上传</p>
+            <div>
+              <p *ngIf = "item.strategy !== 3" [ngClass] = "{'mcDetail-pay': item.strategy !== 3}"> ￥{{ item.articlePrice }}</p>
+              <p *ngIf = "item.strategy === 3" [ngClass] = "{'mcDetail-free': item.strategy === 3}">免费</p>
+            </div>
+          <!-- </ion-card-content> -->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div class="mcDetail-btns">
+      <div class="mcDetail-read">
+        <button *ngIf = "item.strategy === 1"
+          (tap) = "goPayRead(item)">付费阅读</button>
+        <button *ngIf = "item.strategy === 2"
+          (tap) = "goRead(item)">免费试读</button>
+        <button *ngIf = "item.strategy === 3"
+          (tap) = "goRead(item)">开始阅读</button>
+      </div>
+      <div class="mcDetail-collect">
+        <button>加入收藏</button>
+      </div>
+    </div>
+
+    <p class="mcDetail-brief">简介：<span [innerHtml] = "item.content"></span>
+      <!-- <span class="mcDetail-more">【详情】</span> -->
+    </p>
+
+  </ion-card>
+
+  <div class="mcContainer" *ngIf = "comments.length > 0">
+    <h2>网友评论</h2>
+    <section class="mcComment" *ngFor = "let comment of comments; let i = index"  [ngStyle] = "{'border-top': i === 0 ? '1px solid #dbdbdb' : ''}">
+      <div class="mcComment-img">
+        <img [src]="imgurl + comment.user.headImgUrl" alt="">
+      </div>
+      <div class="mcComment-body">
+        <div class="mcComment-info">
+          <div>
+            <h3 class="mcComment-title">{{ comment.user.username }}</h3>
+            <p class="mcComment-time">{{ comment.user.createdAt }}</p>
+          </div>
+          <span class="mcComment-star" (tap) = "onChangelike(comment)">
+            <!--<i [ngClass] = " {'icon-zang-jh' : comment.isLike ===1 } " class="icon-zang-mr"></i>-->
+
+            <img src="assets/marchen/icon-zang-mr.png" alt="" *ngIf = "comment.isLike === 0">
+            <img src="assets/marchen/icon-zang-jh.png" alt="" *ngIf = "comment.isLike === 1">
+
+            <span>{{ comment.likeNum }}</span></span>
+        </div>
+        <div class="mcComment-content">
+          <p [innerHtml] = "comment.comment"></p>
+        </div>
+      </div>
+    </section>
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+
+  <div *ngIf = "comments.length == 0">
+    暂无评论
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div class="mcFotter">
+    <ion-grid >
+      <ion-row>
+        <ion-col class="mcFotter-comment">
+          <p class="mcFotter-input"
+            (tap) = "presentModal()">
+            发表一下你的评论吧
+          </p>
+
+        </ion-col>
+        <ion-col class="mcFotter-stars">
+          <page-stars [data] = 'item' [isSubject] = 'true' [isZhuangfa] = 'true' [commentNum] = 'true'></page-stars>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+
+</ion-footer>

@@ -1,0 +1,63 @@
+<!--
+  Generated template for the PagesChoicenessPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<!--轮播图结束-->
+
+<ion-card class="mcArticle" no-padding margin-vertical  *ngFor = "let item of data">
+  <div *ngIf = "item.articleId">
+    <ion-item class="mcArticle-header">
+      <ion-avatar item-start>
+        <img [src]="imgurl + item.user.headImgUrl">
+      </ion-avatar>
+      <span class="name">{{item.user.username}}</span>
+      <ion-note align-self-center float-right >
+        {{item.user.createdAt}}
+      </ion-note>
+    </ion-item>
+
+    <ion-grid class="mcArticle-item" (tap) = "goDetails(item)">
+
+      <!-- <ion-row>
+        <ion-col>
+          <section class="mcComment">
+            <div class="mcComment-img">
+              <img [src]="imgurl + item.user.headImgUrl" alt="">
+            </div>
+            <div class="mcComment-body">
+              <div>
+                <h3 class="mcComment-title">{{item.user.username}}</h3>
+              </div>
+              <span>{{item.user.createdAt}}</span>
+            </div>
+          </section>
+        </ion-col>
+      </ion-row> -->
+
+      <ion-row>
+        <ion-col col-5 class="mcArticle-img">
+          <img [src] = "imgurl + item.imgUrl">
+        </ion-col>
+        <ion-col col-7 class="mcArticle-body">
+            <h3 class="mcArticle-title">{{ item.title }}</h3>
+            <p class="mcArticle-content" [innerHtml] = "item.content"></p>
+            <div>
+              <p *ngIf = "item.strategy !== 3" [ngClass] = "{'mcArticle-pay': item.strategy !== 3}"> ￥{{ item.articlePrice }}</p>
+              <p *ngIf = "item.strategy === 3" [ngClass] = "{'mcArticle-free': item.strategy === 3}">免费</p>
+            </div>
+          <!-- </ion-card-content> -->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <page-stars [data] = 'item' [isSubject] = 'true'></page-stars>
+  </div>
+
+  <div *ngIf = "!item.articleId">
+    {{ item.videoTitle }}
+  </div>
+
+</ion-card>

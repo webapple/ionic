@@ -1,0 +1,51 @@
+page-stars {
+  .starItem {
+    display: inline-block;
+    font-size: 13px;
+    color: #999;
+    i {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin-right: 7px;
+      vertical-align: middle;
+    }
+    img {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin-right: 7px;
+      vertical-align: middle;
+      margin-top: -2px;
+    }
+    span {
+      display: inline-block;
+    }
+
+  }
+  .icon-zang-mr {
+    background: url(../../assets/marchen/icon-zang-mr.png) no-repeat;
+    background-size: 16px;
+  }
+  .icon-sc-mr {
+    background: url(../../assets/marchen/icon-sc-mr.png) no-repeat;
+    background-size: 16px;
+  }
+  .icon-fx {
+    background: url(../../assets/marchen/icon-fx.png) no-repeat;
+    background-size: 16px;
+  }
+  .icon-ly {
+    background: url(../../assets/marchen/icon-ly.png) no-repeat;
+    background-size: 16px;
+  }
+  .icon-zang-jh {
+    background: url(../../assets/marchen/icon-zang-jh.png) no-repeat;
+    background-size: 16px;
+  }
+  .icon-sc-jh {
+    background: url(../../assets/marchen/icon-sc-jh.png) no-repeat;
+    background-size: 16px;
+  }
+
+}

@@ -1,0 +1,74 @@
+<!--
+  Generated template for the ArticleDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>文章详情</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bac">
+  <ion-card class="maginTop">
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-5>
+          <img  [src]="lastData.image">
+        </ion-col>
+        <ion-col col-7>
+          <ion-card-content  no-padding>
+            <p class="title">{{lastData.title}}</p>
+            <p class="content-text">作者 {{lastData.name}}</p>
+            <p class="content-text">{{lastData.time}} 上传</p>
+            <p [ngClass]="{'price0': lastData.ngclass,'price1': !lastData.ngclass}">{{lastData.price}}</p>
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-row>
+      <ion-col col-4>
+        <button ion-button>付费阅读</button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button color="light">加入收藏</button>
+      </ion-col>
+    </ion-row>
+  <ion-row>
+    <ion-col>
+      <p class="content-text">简介 ：{{lastData.main}}</p>
+    </ion-col>
+  </ion-row>
+  </ion-card>
+
+  <ion-card class="card2">
+    <div *ngFor = "let card of list; let i = index;">
+
+      <ion-item>
+            <ion-avatar item-start>
+              <img src="assets/img/002.jpg">
+            </ion-avatar>
+            <h2>Cher</h2>
+            <p float-left>Ugh. As if.</p>
+        <ion-note align-self-center float-right >
+          {{lastData.time}}
+        </ion-note>
+
+      </ion-item>
+        <ion-row class="magin-left border-bottom">
+          <ion-col col-1>
+
+          </ion-col>
+          <ion-col col-11>
+            <p class="magin-left">{{lastData.main}}</p>
+          </ion-col>
+        </ion-row>
+    </div>
+
+  </ion-card>
+</ion-content>

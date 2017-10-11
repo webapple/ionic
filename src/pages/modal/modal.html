@@ -1,0 +1,28 @@
+<!--
+  Generated template for the ModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<div (tap)="dismiss()" class="div">
+  <div class="center">
+    <ion-grid>
+      <ion-row (tap)="itemTapped($event)" >
+        <ion-col col-5>
+          <img src="assets/img/uploadArticle.png" class="img" float-right>
+        </ion-col>
+        <ion-col col-7>
+          发布文章
+        </ion-col>
+      </ion-row>
+      <ion-row (tap)="uploadvideo($event)">
+        <ion-col col-5>
+          <img src="assets/img/uploadVideo.png" class="img" float-right>
+        </ion-col>
+        <ion-col col-7>
+          上传团购视频
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>

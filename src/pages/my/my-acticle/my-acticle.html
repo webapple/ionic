@@ -1,0 +1,78 @@
+<!--
+  Generated template for the MyActiclePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我的文章</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <div class="mcTabs">
+    <p
+      (click)="isRelease('release')"
+      [ngClass]="{'mcActive': controlTab == 'release'}">已发布</p>
+    <p
+      (click)="isRelease('draft')"
+      [ngClass]="{'mcActive': controlTab == 'draft'}">草稿箱</p>
+  </div>
+
+  <div>
+    <div *ngIf="controlTab == 'release'">
+      <page-pages-choiceness [data]='items'></page-pages-choiceness>
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content>
+
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+
+    <div *ngIf="controlTab == 'draft'">
+      <ion-card class="mcArticle" *ngFor="let item of items1">
+
+        <ion-item class="mcArticle-header">
+          <ion-avatar item-start>
+            <img [src]=" item.user.headImgUrl? imgurl + item.user.headImgUrl: ''">
+          </ion-avatar>
+          <span class="mcArticle-name">{{item.user.username}}</span>
+          <ion-note align-self-center float-right>
+            {{item.user.createdAt}}
+          </ion-note>
+        </ion-item>
+
+        <ion-grid class="mcArticle-item">
+
+          <ion-row>
+            <ion-col col-5 class="mcArticle-img">
+              <img [src]="item.imgUrl? imgurl + item.imgUrl: 'assets/img/defaultImg.png'">
+            </ion-col>
+            <ion-col col-7 class="mcArticle-body">
+              <h3 class="mcArticle-title">{{ item.title }}</h3>
+              <p class="mcArticle-content" [innerHtml]="item.content"></p>
+              <div>
+                <p *ngIf="item.strategy !== 3" [ngClass]="{'mcArticle-pay': item.strategy !== 3}"> ￥{{ item.articlePrice
+                  }}</p>
+                <p *ngIf="item.strategy === 3" [ngClass]="{'mcArticle-free': item.strategy === 3}">免费</p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </ion-card>
+
+      <ion-infinite-scroll (ionInfinite)="doInfinite1($event)">
+        <ion-infinite-scroll-content>
+
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+  </div>
+
+
+</ion-content>

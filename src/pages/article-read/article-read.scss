@@ -1,0 +1,94 @@
+page-article-read {
+  .mcHeader {
+    .back-button-icon {
+      font-size: 28px;
+      color: #444;
+    }
+    .back-button-text {
+      color: #444;
+    }
+    .toolbar-background  {
+      background-color: #fff;
+    }
+    .toolbar-title {
+      font-size: 18px;
+      color: #444;
+    }
+
+  }
+
+  .mcRead {
+    padding-left: 13px;
+    padding-right: 14px;
+
+  }
+
+  .mcRead-title {
+    font-size: 21px;
+    color: #444;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  .mcRead-userinfo {
+    display: flex;
+    align-items: flex-start;
+    padding-left: 0;
+    h3 {
+      margin: 0;
+      padding: 0;
+    }
+    .mcRead-img {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-right: 15px;
+      margin-top: 1px;
+      img {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+      }
+    }
+    .mcRead-body {
+      flex: 1;
+    }
+    .mcRead-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .mcRead-author {
+      font-size: 15px;
+      color: #444;
+      line-height: 1;
+    }
+    .mcRead-time {
+      font-size: 10px;
+      color: #999;
+      line-height: 1;
+    }
+  }
+
+  .mcRead-content {
+    margin-top: 24px;
+    font-size: 16px;
+    color: #444;
+    line-height: 24px;
+  }
+
+  .mcRead-isfree {
+    margin-top: 60px;
+    text-align: center;
+    p {
+      margin-top: 0;
+      margin-bottom: 24px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #444;
+    }
+    button {
+      width: 80%;
+    }
+
+  }
+}

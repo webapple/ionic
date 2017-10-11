@@ -1,0 +1,40 @@
+page-found-user {
+  .mcUser-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    // background: red;
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  .mcUser-title {
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #444;
+
+  }
+
+  .mcUser-text {
+    font-size: 10px;
+    color: #999;
+  }
+
+  .mcUser-comfollow {
+    width: 60px;
+    height: 25px;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+  .mcUser-nofollow {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #777;
+  }
+  .mcUser-follow {
+    background-color: #2ab1ff;
+    border: 1px solid #1696e0;
+    color: #fff;
+  }
+}

@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar no-padding  style="min-height: 100%">
+    <ion-grid  class="header">
+      <ion-row>
+        <ion-col>
+          <ion-avatar class = "avatar">
+            <img  [src] = "imageUrl">
+          </ion-avatar>
+        </ion-col>
+        <ion-col>
+          <ion-segment color="primary" [(ngModel)]="active" calss="magin" >
+            <ion-segment-button value="recommend"
+                                >
+              推荐
+            </ion-segment-button>
+            <ion-segment-button value="choiceness"
+                                (tap) = "getProducts()" >
+              精选
+            </ion-segment-button>
+
+          </ion-segment>
+        </ion-col>
+        <ion-col>
+          <ion-icon (tap)="itemTapped($event)" name="search" float-right  style="font-size: 24px;margin-top:8px;color: #fff;"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class = "bac">
+  <div [ngSwitch]="active">
+    <div *ngSwitchCase="'choiceness'">
+      <page-swiper></page-swiper>
+      <page-pages-choiceness [data] = 'items' [isSubject] = 'isSubject'></page-pages-choiceness>
+
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+          <ion-infinite-scroll-content>
+
+          </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+    <div *ngSwitchCase="'recommend'">
+      <page-swiper></page-swiper>
+      <page-pages-choiceness [data] = 'items1' [isSubject] = 'isSubject'></page-pages-choiceness>
+
+      <ion-infinite-scroll (ionInfinite)="doInfinite1($event)">
+          <ion-infinite-scroll-content>
+
+          </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+
+
+  </div>
+
+</ion-content>

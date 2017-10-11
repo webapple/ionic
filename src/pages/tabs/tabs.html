@@ -1,0 +1,7 @@
+<ion-tabs  #mainTabs>
+  <ion-tab [root]="tab1Root" tabTitle="首页" tabIcon="shouye"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="发现" tabIcon="information-circle"></ion-tab>
+  <ion-tab tabIcon="adds" (ionSelect)="presentModal()"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="团购" tabIcon="cart"></ion-tab>
+  <ion-tab [root]="tab4Root" tabTitle="我的" tabIcon="contact"></ion-tab>
+</ion-tabs>

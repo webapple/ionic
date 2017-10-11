@@ -1,0 +1,41 @@
+page-search {
+  .header{
+    background: white!important;
+    border-bottom: 1px solid #ccc;
+  }
+  .input{
+    width: 90%;
+    line-height: 28px;
+  }
+  .text-input-ios{
+    margin: 6px 0!important;
+  }
+  .search{
+    background: #f5f5f5;
+    border-radius: 3px;
+    height: 36px;
+  }
+  .search:after{
+    content: "";
+    clear: both;
+    display: block;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+  .icon{
+    font-size:24px;
+    margin: 6px 0;
+    margin-left: 6px;
+  }
+  .icon1{
+    width: 16px;
+    margin-right: 7px;
+  }
+  .icontxet{
+    line-height: 16px;
+    height: 13px;
+    display: block;
+    color: #ccc;
+  }
+}

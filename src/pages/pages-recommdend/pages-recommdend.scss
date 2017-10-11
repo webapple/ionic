@@ -1,0 +1,49 @@
+.text{
+  background-color: black;
+  opacity:0.6;
+  position: absolute;
+  bottom: 5px;
+  color: white;
+  margin: 0;
+  padding:0;
+  width: 100%;
+  text-align: left;
+  line-height: 33px;
+  font-size:14px;
+  text-indent: 0.5rem;
+}
+.slideImg{
+  width: 100%!important;
+  height: 150px!important;
+}
+/*卡片在外层样式*/
+.card-ios{
+  margin: 10px 0;
+  width: 100%;
+}
+/*卡片标题样式*/
+.title{
+  font-size: 16px !important;
+  color: #444 !important;
+  font-weight: 600;
+}
+/*文章作者*/
+.name{
+  font-size: 15px;
+  color: #444;
+  font-weight: 600;
+}
+/*卡片正文摘要*/
+.content-text{
+  font-size:13px !important;
+  line-height: 21px !important;
+  color:#777 !important;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+}
+.button-ios{
+  margin: 0 0.2rem 0.1rem 0.2rem;
+}

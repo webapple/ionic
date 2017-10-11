@@ -1,0 +1,37 @@
+<!--
+  Generated template for the MyMessagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>消息中心</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background: #f5f5f5;margin-top: 10px">
+  <ion-list style="background: white">
+    <ion-item  *ngFor="let data of datalist; let i = index" (tap) ="gotoGroup(i)">
+      <ion-avatar item-start>
+        <img [src]="'http://loupai.6655.la:20503/api/static/image/' + data.user.headImgUrl">
+      </ion-avatar>
+      <h2 class="h2">{{data.content}}</h2>
+
+      <ion-note align-self-center style="font-size: 10px; color: #999;">
+        {{data.createdAt}}
+      </ion-note>
+    </ion-item>
+
+
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="正在加载...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

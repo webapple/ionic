@@ -1,0 +1,60 @@
+<!--
+  Generated template for the SearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="header">
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-10>
+            <!-- <div class="search"> -->
+              <!-- <ion-icon name="search"
+                (tap) = "searchUser()">
+              </ion-icon> -->
+              <!-- action="javascript:void(0);"  -->
+
+          <form class="mcSearch">
+            <button (tap) = "searchUser(text)"></button>
+            <input type="search" name="text" [(ngModel)] = "text" placeholder="搜索">
+          </form>
+              <!-- <ion-input class="input" type="search" [(ngModel)] = "text" float-right  placeholder="搜索"></ion-input> -->
+            <!-- </div> -->
+        </ion-col>
+        <ion-col col-2>
+          <button ion-button clear float-right small navPop style="padding-top: 5px;color: black">
+            取消
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+</ion-header>
+
+
+<ion-content style="background: #F5F5F5">
+  <ion-list reorder="true" *ngIf = "isShow" padding>
+    <ion-list-header>搜索历史</ion-list-header>
+    <div *ngIf = "type === 1">
+      <ion-item *ngFor="let dat1 of cache1"  (tap) = "searchUser(dat1)">{{ dat1 }}</ion-item>
+    </div>
+    <div *ngIf = "type === 2">
+      <ion-item *ngFor="let dat of cache"  (tap) = "searchUser(dat)">{{ dat }}</ion-item>
+    </div>
+  </ion-list>
+
+  <div *ngIf = "type === 1">
+    <page-found-user [items] = "items" [isSubject] = "true"></page-found-user>
+  </div>
+
+  <div *ngIf = "type === 2">
+    <page-pages-choiceness [data] = 'items' [isSubject] = "true"></page-pages-choiceness>
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content>
+
+      </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,69 @@
+<!--
+  Generated template for the PagesRecommdendPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-grid no-padding>
+  <ion-row>
+    <ion-slides pager autoplay="6000" loop="true">
+      <ion-slide *ngFor = "let slide of slides">
+        <img class="slideImg" [src]="slide.image">
+        <p class="text">{{slide.text}}</p>
+      </ion-slide>
+    </ion-slides>
+  </ion-row>
+</ion-grid>
+<!--轮播图结束-->
+<ion-card no-padding margin-vertical  *ngFor = "let card of cards">
+
+  <ion-item>
+    <ion-avatar item-start>
+      <img [src]="card.avatar">
+    </ion-avatar>
+    <span class="name">{{card.name}}</span>
+    <ion-note align-self-center float-right >
+      {{card.time}}
+    </ion-note>
+  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-5>
+        <img  [src]="card.image">
+      </ion-col>
+      <ion-col col-7>
+        <ion-card-content  no-padding>
+          <p class="title">{{card.title}}</p>
+          <p class="content-text">{{card.main}}</p>
+          <p [ngClass]="{'price0': card.ngclass,'price1': !card.ngclass}">{{card.price}}</p>
+        </ion-card-content>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-row>
+    <ion-col  no-padding>
+      <button ion-button icon-left clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>12 喜欢</div>
+      </button>
+    </ion-col>
+    <ion-col  no-padding>
+      <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>4 评论</div>
+      </button>
+    </ion-col>
+    <ion-col  no-padding>
+      <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>4 评论</div>
+      </button>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
+

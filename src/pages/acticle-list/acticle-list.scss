@@ -1,0 +1,96 @@
+page-acticle-list {
+  .text {
+    background-color: black;
+    opacity: 0.6;
+    position: absolute;
+    bottom: 5px;
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+    line-height: 33px;
+    font-size: 14px;
+    text-indent: 0.5rem;
+  }
+  .slideImg {
+    width: 100% !important;
+    height: 150px !important;
+  }
+  /*卡片在外层样式*/
+  // .card-ios {
+  //   margin: 10px 0;
+  //   width: 100%;
+  // }
+  /*卡片标题样式*/
+  // .title {
+  //   font-size: 16px !important;
+  //   color: #444 !important;
+  //   font-weight: 600;
+  // }
+  /*文章作者*/
+  .name {
+    font-size: 15px;
+    color: #444;
+    font-weight: 600;
+  }
+
+  .mcArticle {
+    margin: 0;
+    padding: 16px 17px;
+    box-shadow: none;
+    border-bottom: 1px solid #dbdbdb;
+    ion-grid {
+      padding: 0;
+    }
+    ion-col {
+      padding: 0;
+    }
+
+    .mcArticle-header {
+      padding-left: 0;
+      .item-inner {
+        padding-right: 0;
+      }
+      ion-label {
+        margin-right: 0;
+      }
+    }
+
+    .mcArticle-item {
+      margin-bottom: 18px;
+    }
+
+
+    .mcArticle-img {
+      padding-right: 10px;
+    }
+
+    .mcArticle-title {
+      font-size: 16px;
+      color: #444;
+      font-weight: bold;
+      margin-bottom: 8px;
+
+    }
+    .mcArticle-content {
+      font-size: 13px;
+      color: #777;
+      line-height: 18px;
+    }
+    .mcArticle-pay {
+      font-size: 15px;
+      color: #fd4a13;
+      font-weight: bold;
+    }
+    .mcArticle-free {
+      font-size: 16px;
+      color: #2ab1ff;
+      font-weight: bold;
+    }
+
+
+  }
+
+
+}

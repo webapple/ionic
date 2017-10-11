@@ -1,0 +1,74 @@
+page-group-shopping {
+  /*卡片标题样式*/
+  .title {
+    font-size: 16px !important;
+    color: #444 !important;
+    font-weight: 600;
+    margin: 4px 0!important;
+  }
+  .bac{
+    background: #f5f5f5;
+  }
+  /*页面上边距*/
+  .maginTop{
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin: 0!important;
+    background:#ffffff;
+  }
+  /*卡片正文摘要*/
+  .content-text {
+    font-size: 12px !important;
+    line-height: 20px !important;
+    color: #777 !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin: 2px 0!important;
+  }
+  .price0 {
+    font-size: 15px;
+    color: #fd4a13 !important;
+    margin: 4px 0!important;
+  }
+  .price1 {
+    font-size: 15px;
+    color: #2ab1ff !important;
+    margin: 4px 0!important;
+  }
+  /*评论卡片上边距*/
+  .card2{
+    margin-top: 10px;
+  }
+  /*评论左边距*/
+  .magin-left{
+    margin-left: 16px;
+  }
+  .border-bottom{
+    border-bottom: 1px solid #ccc;
+  }
+  /*进度条相关*/
+  .bar{
+    width: 80%;
+    height: 4rem;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    border-radius:2rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #00a6dd;
+  }
+  .bar-main{
+    position: absolute;
+    height: 100%;
+    //width: 40%;
+    background: #00a6dd;
+  }
+  .bartext{
+    text-align: center;
+  }
+}

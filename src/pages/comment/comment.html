@@ -1,0 +1,24 @@
+<!--
+  Generated template for the CommentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<div class="background">
+  <div style="background: white;" class="position">
+    <div style="height: 30px;line-height: 30px">
+      <p float-left no-margin class="pading" (tap)="dismiss()">取消</p>
+      <p float-right no-margin class="pading" (tap) ="creation()">发送</p>
+    </div>
+    <div class="pading">
+      <ion-textarea placeholder="发表一下你的看法吧" style="height: 100px;" id="textarea" autofocus [(ngModel)]="content" (input)= "change()"></ion-textarea>
+    </div>
+    <div class="pading" style="background: white;height: 35px;border-bottom: 1px solid #ccc;margin-bottom: 15px">
+      <p style="text-align: right">{{contentlength}}/100</p>
+    </div>
+    <div style="height: 10px;"></div>
+  </div>
+
+</div>
+
+

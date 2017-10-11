@@ -1,0 +1,57 @@
+page-search-users {
+  .header{
+    background: white!important;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .mcSearch {
+    display: flex;
+    height: 30px;
+    padding-left: 6px;
+    background-color: #f5f5f5;
+    button {
+      flex: 0 0 24px;
+      width: 24px;
+      margin-right: 6px;
+      background-image: url(assets/marchen/icon-search.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 24px;
+      background-color: #f5f5f5;
+    }
+
+    input {
+      flex: 1;
+      border: 0;
+      background-color: #f5f5f5;
+    }
+
+  }
+
+
+  // .input{
+  //   width: 90%;
+  //   line-height: 28px;
+  // }
+  // .text-input-ios{
+  //   margin: 6px 0!important;
+  // }
+  // .search{
+  //   background: #f5f5f5;
+  //   border-radius: 3px;
+  //   height: 36px;
+  // }
+  // .search:after{
+  //   content: "";
+  //   clear: both;
+  //   display: block;
+  //   width: 0;
+  //   height: 0;
+  //   visibility: hidden;
+  // }
+  // .icon{
+  //   font-size:24px;
+  //   margin: 6px 0;
+  //   margin-left: 6px;
+  // }
+}

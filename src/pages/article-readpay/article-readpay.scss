@@ -1,0 +1,130 @@
+page-article-readpay {
+  .mcHeader {
+    .back-button-icon {
+      font-size: 28px;
+      color: #444;
+    }
+    .back-button-text {
+      color: #444;
+    }
+    .toolbar-background  {
+      background-color: #fff;
+    }
+    .toolbar-title {
+      font-size: 18px;
+      color: #444;
+    }
+
+  }
+
+  .mcPayRead {
+    margin: 0;
+    padding-top: 20px;
+    padding-left: 14px;
+    ion-grid {
+      padding: 0;
+    }
+    ion-col {
+      padding: 0;
+    }
+    .mcPayRead-item {
+      margin-bottom: 18px;
+    }
+    .mcPayRead-img {
+      padding-right: 10px;
+    }
+    .mcPayRead-body {
+      padding-top: 8px;
+    }
+    .mcPayRead-title {
+      font-size: 16px;
+      color: #444;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .mcPayRead-author, .mcPayRead-time {
+      font-size: 12px;
+      color: #777;
+      margin-bottom: 8px;
+    }
+
+    .mcPayRead-brief {
+      padding-right: 14px;
+      padding-bottom: 20px;
+      margin: 0;
+      border-bottom: 1px solid #dbdbdb;
+      font-size: 12px;
+      color: #777;
+      line-height: 18px;
+
+    }
+  }
+
+  .mcPrice-btns {
+    padding: 18px 0 44px 14px;
+
+    .mcPrice-btn1 {
+      position: relative;
+      width: 109px;
+      height: 36px;
+      border: 1px solid #1696e0;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #2ab1ff;
+      background-color: #fff;
+      span {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background-color: #2ab1ff;
+        opacity: .2;
+      }
+    }
+  }
+
+  .mcPayment {
+    .item {
+      padding-left: 14px;
+    }
+    .input-wrapper {
+      font-size: 15px;
+      color: #777;
+    }
+    input {
+      appearance: none;
+      outline:none;
+
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-size: 20px;
+      background-image: url(assets/marchen/icon-read-mr.png);
+
+
+      &:checked {
+        background-image: url(assets/marchen/icon-read-jh.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20px;
+      }
+    }
+
+    // .mcPayment-wx {
+    //   display: inline-block;
+    //   width: 20px;
+    //   height: 20px;
+    //   background: url(../../assets/marchen/icon-read-mr.png);
+    //   background-size: 20px;
+    //
+    // }
+    .mcPayment-btns {
+      text-align: center;
+      button {
+        width: 80%;
+      }
+    }
+
+  }
+}

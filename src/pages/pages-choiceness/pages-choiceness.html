@@ -1,0 +1,111 @@
+<!--
+  Generated template for the PagesChoicenessPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<!--轮播图结束-->
+
+<ion-card class="mcArticle" no-padding margin-vertical  *ngFor = "let item of data; let i = index">
+  <div *ngIf = "item.articleId">
+    <ion-item class="mcArticle-header">
+      <ion-avatar item-start>
+        <img [src]="imgurl + item.user.headImgUrl">
+      </ion-avatar>
+      <span class="mcArticle-name">{{item.user.username}}</span>
+      <ion-note align-self-center float-right >
+        {{item.user.createdAt}}
+      </ion-note>
+    </ion-item>
+
+    <ion-grid class="mcArticle-item" (tap) = "goDetails(item)">
+
+      <!-- <ion-row>
+        <ion-col>
+          <section class="mcComment">
+            <div class="mcComment-img">
+              <img [src]="imgurl + item.user.headImgUrl" alt="">
+            </div>
+            <div class="mcComment-body">
+              <div>
+                <h3 class="mcComment-title">{{item.user.username}}</h3>
+              </div>
+              <span>{{item.user.createdAt}}</span>
+            </div>
+          </section>
+        </ion-col>
+      </ion-row> -->
+
+      <ion-row>
+        <ion-col col-5 class="mcArticle-img">
+          <img [src] = "imgurl + item.imgUrl">
+        </ion-col>
+        <ion-col col-7 class="mcArticle-body">
+            <h3 class="mcArticle-title">{{ item.title }}</h3>
+            <p class="mcArticle-content" [innerHtml] = "item.content"></p>
+            <div>
+              <p *ngIf = "item.strategy !== 3" [ngClass] = "{'mcArticle-pay': item.strategy !== 3}"> ￥{{ item.articlePrice }}</p>
+              <p *ngIf = "item.strategy === 3" [ngClass] = "{'mcArticle-free': item.strategy === 3}">免费</p>
+            </div>
+          <!-- </ion-card-content> -->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <page-stars [data] = "item" [isSubject] = "isSubject"></page-stars>
+  </div>
+
+  <div *ngIf = "!item.articleId">
+    <ion-item class="mcArticle-header">
+      <ion-avatar item-start>
+        <img [src]="imgurl + item.user.headImgUrl">
+      </ion-avatar>
+      <span class="name">{{item.user.username}}</span>
+      <ion-note align-self-center float-right >
+        {{item.user.createdAt}}
+      </ion-note>
+    </ion-item>
+    <ion-grid>
+      <ion-row (tap)="goTopage($event,item,i)">
+        <ion-col col-5 style="padding-right: 10px">
+          <div class="modal" style="position: absolute;width: 100%;height: 100%"></div>
+          <iframe frameborder="0" width="100%" height="100px" [src] = "item.videoUrl2"  allowfullscreen></iframe>
+        </ion-col>
+        <ion-col col-7>
+          <ion-card-content  no-padding>
+            <p  class="mcArticle-title">{{item.videoTitle}}</p>
+            <p class="mcArticle-content">{{item.intro}}</p>
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-row>
+      <ion-col  no-padding (tap)="change(i,'likeimgUrl','1')">
+        <button ion-button icon-left clear small>
+          <img [src]="item.likeimgUrl" class="icon">
+          <div class="icontxet">{{item.likeNum}}</div>
+        </button>
+      </ion-col>
+      <ion-col  no-padding (tap)="change(i,'collectimgUrl','2')">
+        <button ion-button icon-left clear small>
+          <img [src]="item.collectimgUrl" class="icon">
+          <div class="icontxet">{{item.collectNum}}</div>
+        </button>
+      </ion-col>
+      <ion-col  no-padding (tap)="goTopage($event,item,i,true)">
+        <button ion-button icon-left clear small>
+          <img src="assets/img/comment.png" class="icon">
+          <div class="icontxet">{{item.commentNum}}</div>
+        </button>
+      </ion-col>
+      <ion-col  no-padding (tap)="change(i,'shareimgUrl')">
+        <button ion-button icon-left clear small>
+          <img [src]="item.shareimgUrl" class="icon">
+          <div class="icontxet">{{item.relayNum}}</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+</ion-card>

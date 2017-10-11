@@ -1,0 +1,25 @@
+<!--
+  Generated template for the FoundPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar class="mcTitle" no-lines >
+    <ion-title>发现</ion-title>
+    <ion-icon name="search" float-right  style="font-size: 24px;margin-top:8px;color: #fff;"
+      (tap)="goSearchPage($event)"></ion-icon>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="mcBody">
+
+  <page-found-user [items] = "items" [isSubject] = "false"></page-found-user>
+
+  <!-- <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
+
+</ion-content>

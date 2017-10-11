@@ -1,0 +1,73 @@
+<!--
+  Generated template for the ArticleReadpayPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar class="mcHeader">
+    <ion-title>付费阅读</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="mcPayRead">
+    <ion-grid class="mcPayRead-item">
+      <ion-row>
+        <ion-col col-5 class="mcPayRead-img">
+          <img [src] = "imgurl + item.imgUrl">
+        </ion-col>
+        <ion-col col-7 class="mcPayRead-body">
+          <h3 class="mcPayRead-title">{{ item.title }}</h3>
+          <p class="mcPayRead-author">作者 {{ item.user.username}}</p>
+          <p class="mcPayRead-time">{{ item.user.createdAt }}上传</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <p class="mcPayRead-brief" >简介：<span [innerHtml] = "item.content"></span></p>
+  </div>
+
+  <div class="mcPrice-btns">
+    <button class="mcPrice-btn1">单人 {{ item.articlePrice }}元 <span></span></button>
+  </div>
+
+  <div class="mcPayment">
+    <ion-list>
+      <ion-list-header>
+        支付方式
+      </ion-list-header>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/marchen/icon-zfb.png">
+        </ion-avatar>
+        <h2>支付宝</h2>
+        <div item-end>
+          <label class="mcPayment-wx">
+            <input type="radio" name = "pay" #zfb>
+          </label>
+        </div>
+
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/marchen/icon-wx.png" >
+        </ion-avatar>
+        <h2>微信支付</h2>
+        <div item-end>
+          <label class="mcPayment-wx">
+            <input type="radio" name = "pay" #wx>
+          </label>
+        </div>
+      </ion-item>
+    </ion-list>
+
+    <div class="mcPayment-btns" >
+      <button ion-button
+        (tap) = "goToPay()">立即购买</button>
+    </div>
+  </div>
+</ion-content>

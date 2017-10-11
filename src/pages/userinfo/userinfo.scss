@@ -1,0 +1,40 @@
+page-userinfo {
+  .ionic{
+    width: 24px;
+    margin-right: 8px;
+  }
+  .textSty{
+    font-size:15px;
+    line-height: 30px;
+    color: #444;
+    float: left;
+  }
+  .info{
+    float: right!important;
+    color: #999;
+    font-size:15px;
+    line-height: 30px;
+  }
+  .titles{
+    text-indent: 1rem;
+    font-size:15px;
+    line-height: 30px;
+    color: #999;
+    margin: 5px 0!important;
+  }
+  .active{
+    color: #2AB1FF!important;
+  }
+  /*头像*/
+  .avatar{
+    width:50px;
+    position: relative;
+  }
+  .file{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0!important;
+    z-index: 99;
+  }
+}

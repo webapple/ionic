@@ -1,0 +1,58 @@
+page-videi-play {
+  .item-inner{
+    border:none!important;
+  }
+  .icontxet{
+    line-height: 16px;
+    height: 13px;
+    display: block;
+    color: #ccc;
+  }
+  .bac{
+    background: #f5f5f5;
+  }
+  .border-bottom{
+    border-bottom: 1px solid #ccc;
+  }
+  .magin-left{
+    margin-left: 8px;
+  }
+  .magin-bottom{
+    margin-bottom: 8px;
+  }
+  .comment{
+    color: #ccc;
+    background: #f5f5f5;
+    font-size:16px;
+    padding: 3px;
+    margin: 4px 0!important;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .comment-mian{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background:white;
+  }
+  .icon{
+    width: 18px;
+    height: 18px;
+  }
+  .icontxet{
+    font-size:16px;
+    margin-left: 4px;
+    line-height: 20px;
+  }
+  .card2{
+    margin-bottom: 44px;
+  }
+  .password{
+    color: whitesmoke;
+    opacity: .8;
+    position: absolute;
+    bottom: 0;
+    line-height: 20px;
+    text-indent: 1rem;
+  }
+}

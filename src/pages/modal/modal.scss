@@ -1,0 +1,22 @@
+page-modal {
+
+}
+.div{
+    height: 100%;
+    background: rgba(255,255,255,.9);
+  .center{
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    top:calc(50% - 100px);
+  }
+  ion-col{
+    height: 80px;
+    line-height: 68px;
+    font-size:20px;
+    color: #444;
+  }
+  .img{
+    width: 66px;
+  }
+}

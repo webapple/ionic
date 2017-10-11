@@ -1,0 +1,48 @@
+<ion-header class="ccHeader">
+  <ion-navbar>
+    <!-- <ion-buttons style="display: inline-block">
+      <button ion-button icon-only>
+        <ion-icon class="ccIcon-back" ios="ios-close" md="md-close"></ion-icon>
+      </button>
+    </ion-buttons> -->
+
+    <ion-title>登录</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="ccContent">
+
+    <div class="ccForm-item">
+      <ion-item class="ccPhone">
+        <ion-label >手机号</ion-label>
+        <ion-input type="text" placeholder="请输入手机号" [(ngModel)] = "phone"></ion-input>
+      </ion-item>
+    </div>
+
+    <div class="ccForm-item ccPin">
+      <div>
+        <ion-item>
+          <ion-label >验证码</ion-label>
+          <ion-input type="text" placeholder="请输入验证码" [(ngModel)] = "pin">
+          </ion-input>
+        </ion-item>
+      </div>
+
+      <div>
+        <button (tap) = "sendMessage()" #btnDjs>
+          {{ daojishi }}
+        </button>
+      </div>
+    </div>
+
+  <div class="ccBtn">
+    <button ion-button block  (tap)="logIn()">
+      登录
+    </button>
+  </div>
+  <div class="ccRemind">
+    若您输入的手机号未注册,登录后即可完成注册，点击登录即表示您同意<span>网世界服务条款</span>
+  </div>
+</ion-content>

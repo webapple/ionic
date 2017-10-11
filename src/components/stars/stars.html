@@ -1,0 +1,86 @@
+
+
+
+
+
+<ion-row>
+  <ion-col  no-padding>
+
+    <div class="starItem"
+          (click) = "onChangelike(data)">
+
+      <!--<i class="icon-zang-mr" [ngClass] = "{ 'icon-zang-jh': data.isLike === 1 }"></i>-->
+      <img src="assets/marchen/icon-zang-mr.png" alt="" *ngIf = "data.isLike === 0">
+      <img src="assets/marchen/icon-zang-jh.png" alt="" *ngIf = "data.isLike === 1">
+      <span>{{data.likeNum}}</span>
+    </div>
+    <!-- <button [ngStyle] = "{ 'color': data.isLike === 1 ? '#2ab1ff' : '' }"
+            (click) = "onChangeIslike(data.articleId)"
+            ion-button icon-left clear small>
+      <ion-avatar item-start>
+        <img style="width: 16px; height: 16px;" src="assets/marchen/icon-fx.png">
+      </ion-avatar>
+      <div>{{data.likeNum}}</div>
+    </button> -->
+  </ion-col>
+
+
+  <ion-col no-padding>
+    <div class="starItem"
+          (click) = "onChangeCollect(data)">
+      <!--<i class="icon-sc-mr" [ngClass] = "{ 'icon-sc-jh': data.isCollect === 1 }"></i>-->
+      <img src="assets/marchen/icon-sc-mr.png" alt="" *ngIf = "data.isCollect === 0">
+      <img src="assets/marchen/icon-sc-jh.png" alt="" *ngIf = "data.isCollect === 1">
+      <span>{{data.collectNum}}</span>
+    </div>
+
+    <!-- <button [ngStyle] = "{ 'color': data.isCollect === 1 ? '#f5931f' : '' }" ion-button icon-left clear small>
+      <ion-avatar item-start>
+        <img style="width: 16px; height: 16px;" src="assets/marchen/icon-fx.png">
+      </ion-avatar>
+      <div>{{data.collectNum}}</div>
+    </button> -->
+  </ion-col>
+  <ion-col no-padding>
+
+    <div class="starItem"
+      [hidden] = "commentNum"
+      (click) = "goDetails(data)">
+
+      <!--<i class="icon-ly" ></i>-->
+      <img src="assets/marchen/icon-ly.png" alt="">
+      <span>{{data.commentNum}}</span>
+    </div>
+
+    <div class="starItem"
+      [hidden] = "!commentNum">
+
+      <!--<i class="icon-ly" ></i>-->
+      <img src="assets/marchen/icon-ly.png" alt="">
+      <span>{{data.commentNum}}</span>
+    </div>
+
+    <!-- <button ion-button icon-left clear small>
+      <ion-avatar item-start>
+      </ion-avatar>
+      <div>{{data.commentNum}}</div>
+    </button> -->
+  </ion-col>
+  <ion-col no-padding [hidden] = "isZhuangfa">
+    <!--(click)="share($event)"-->
+    <div class="starItem">
+
+      <!--<i class="icon-fx" ></i>-->
+      <img src="assets/marchen/icon-fx.png" alt="">
+      <span>{{data.relayNum}}</span>
+    </div>
+
+    <!-- <button  ion-button icon-left clear small
+             (click)="share($event)">
+      <ion-avatar item-start>
+        <img style="width: 16px; height: 16px;" src="assets/marchen/icon-fx.png">
+      </ion-avatar>
+      <div>{{data.relayNum}}</div>
+    </button> -->
+  </ion-col>
+</ion-row>
